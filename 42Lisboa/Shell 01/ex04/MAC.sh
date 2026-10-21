@@ -1,1 +1,0 @@
-ifconfig | grep -Eio '([[:xdigit:]]{2}:){5}[[:xdigit:]]{2}'
