@@ -6,7 +6,7 @@
 /*   By: dboryey <dboryey@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 18:34:07 by dboryey           #+#    #+#             */
-/*   Updated: 2026/10/22 19:17:03 by dboryey          ###   ########.fr       */
+/*   Updated: 2026/10/23 13:56:33 by dboryey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,11 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strdup(const char *s);
+char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	**ft_split(char const *s, char c);
 
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
