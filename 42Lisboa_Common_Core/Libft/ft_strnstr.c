@@ -6,7 +6,7 @@
 /*   By: dboryey <dboryey@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 16:22:49 by dboryey           #+#    #+#             */
-/*   Updated: 2026/10/22 18:06:09 by dboryey          ###   ########.fr       */
+/*   Updated: 2026/10/26 15:53:49 by dboryey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	j;
 
 	i = 0;
+	if (little[0] == '\0')
+		return ((char *)big);
 	while (big[i] && i < len)
 	{
 		j = 0;

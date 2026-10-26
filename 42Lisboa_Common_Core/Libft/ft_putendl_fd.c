@@ -6,7 +6,7 @@
 /*   By: dboryey <dboryey@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 12:57:50 by dboryey           #+#    #+#             */
-/*   Updated: 2026/10/26 12:59:29 by dboryey          ###   ########.fr       */
+/*   Updated: 2026/10/26 15:56:18 by dboryey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	ft_putendl_fd(char *s, int fd)
 	while (s[i])
 	{
 		write (fd, &s[i], 1);
+		i++;
 	}
 	write (fd, "\n", 1);
 }

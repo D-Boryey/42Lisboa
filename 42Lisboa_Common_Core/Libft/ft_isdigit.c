@@ -6,13 +6,13 @@
 /*   By: dboryey <dboryey@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 17:33:02 by dboryey           #+#    #+#             */
-/*   Updated: 2026/10/21 17:33:41 by dboryey          ###   ########.fr       */
+/*   Updated: 2026/10/26 15:50:07 by dboryey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c)
 {
-	if (c >= 0 && c <= 9)
+	if (c >= '0' && c <= '9')
 		return (1);
 	else
 		return (0);

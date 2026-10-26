@@ -6,7 +6,7 @@
 /*   By: dboryey <dboryey@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/23 11:39:11 by dboryey           #+#    #+#             */
-/*   Updated: 2026/10/23 11:54:46 by dboryey          ###   ########.fr       */
+/*   Updated: 2026/10/26 16:00:26 by dboryey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		str[i + j] = s2[j];
 		j++;
 	}
-	str[i] = '\0';
+	str[i + j] = '\0';
 	return (str);
 }
