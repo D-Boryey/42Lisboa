@@ -6,13 +6,13 @@
 /*   By: dboryey <dboryey@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/23 13:56:41 by dboryey           #+#    #+#             */
-/*   Updated: 2026/10/24 16:02:12 by dboryey          ###   ########.fr       */
+/*   Updated: 2026/10/26 10:37:01 by dboryey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	count_wrd(char const *s, char c)
+static size_t	count_wrd(char const *s, char c)
 {
 	size_t	i;
 	size_t	count;
@@ -33,7 +33,7 @@ size_t	count_wrd(char const *s, char c)
 	return (count);
 }
 
-void	*free_all(char **array, size_t filled)
+static void	*free_all(char **array, size_t filled)
 {
 	size_t	i;
 
@@ -47,7 +47,7 @@ void	*free_all(char **array, size_t filled)
 	return (NULL);
 }
 
-char	**fill_array(char **array, char const *s, char c)
+static char	**fill_array(char **array, char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
