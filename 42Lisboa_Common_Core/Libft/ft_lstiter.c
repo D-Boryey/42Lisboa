@@ -6,7 +6,7 @@
 /*   By: dboryey <dboryey@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 10:55:49 by dboryey           #+#    #+#             */
-/*   Updated: 2026/10/28 11:04:44 by dboryey          ###   ########.fr       */
+/*   Updated: 2026/10/28 12:10:26 by dboryey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	while (lst)
 	{
 		tmp = lst->next;
-		f(lst);
+		f(lst->content);
 		lst = tmp;
 	}
 }

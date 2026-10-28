@@ -6,7 +6,7 @@
 /*   By: dboryey <dboryey@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 11:05:11 by dboryey           #+#    #+#             */
-/*   Updated: 2026/10/28 11:33:20 by dboryey          ###   ########.fr       */
+/*   Updated: 2026/10/28 12:11:48 by dboryey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (!lst || !f || !del)
 		return (NULL);
-	content = NULL;
+	list = NULL;
 	while (lst)
 	{
 		content = f(lst->content);
