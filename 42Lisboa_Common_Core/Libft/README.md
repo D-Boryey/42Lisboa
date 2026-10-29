@@ -14,9 +14,9 @@ Instructions:
 Resources: 
 	-	During this project I used quite a few different resources in no specific order:
 
-		1.	Linux manual (man man). This was used for the Part1 of the libft project, to search the prototypes of the required functions, their description, return value etc.
+		1.	Linux manual (man). This was used for the Part1 of the libft project, to search the prototypes of the required functions, their description, return value etc.
 
-		2.	Web searches. These were used to learn new materials regarding the required functions, specially for the Part3 of the project, because Linked Lists were a new info for me.
+		2.	Web searches. These were used to learn new materials regarding the required functions, specially for the Part3 of the project, because Linked Lists were a new concept for me. Some examples are for example geeksforgeeks, stackoverflow, reddit, W3Schools, etc. 
 
 		3.	Peers. Of course I can't forget to mention the incredible peers that explained some new concepts and clicked some new ideas during the creation of many functions.
 
@@ -135,12 +135,12 @@ Part1 - Libc functions
 	-	ft_calloc
 	void *ft_calloc(size_t nmemb, size_t size);
 
-	Allocates (with malloc) memory for nmemb elements of size bytes each and sets it all to zero. If nmemb or size is 0, it returns a unique pointer that can be passed to free(). Returns a pointer to the allocated memory, or NULL if the allocation fails.
+	Allocates with malloc memory for nmemb elements of size bytes each and sets it all to zero. If nmemb or size is 0, it returns a unique pointer that can be passed to free. Returns a pointer to the allocated memory, or NULL if the allocation fails.
 
 	-	ft_strdup
 	char *ft_strdup(const char *s);
 
-	Allocates (with malloc) and returns a duplicate of the string s. Returns a pointer to the new string, or NULL if the allocation fails.
+	Allocates with malloc and returns a duplicate of the string s. Returns a pointer to the new string, or NULL if the allocation fails.
 
 Part 2 - Additional functions
 
@@ -162,7 +162,7 @@ Part 2 - Additional functions
 	-	ft_split
 	char **ft_split(char const *s, char c);
 
-	Allocates and returns an array of strings obtained by splitting s using the character c as a delimiter. Each string and the array itself are allocated independently, and the array is NULL-terminated. Returns the array, or NULL if any allocation fails. It must be freed by calling free() on each string and then on the array.
+	Allocates and returns an array of strings obtained by splitting s using the character c as a delimiter. Each string and the array itself are allocated independently, and the array is NULL-terminated. Returns the array, or NULL if any allocation fails. It must be freed by calling free on each string and then on the array.
 
 	-	ft_itoa
 	char *ft_itoa(int n);
@@ -241,12 +241,12 @@ Part 3 - Linked list
 	-	ft_lstdelone
 	void ft_lstdelone(t_list *lst, void (*del)(void *));
 
-	Frees the content of the node lst using del, then frees the node itself. It does **not** free the next node. Returns nothing.
+	Frees the content of the node lst using del, then frees the node itself. It does not free the next node. Returns nothing.
 
 	-	ft_lstclear
 	void ft_lstclear(t_list **lst, void (*del)(void *));
 
-	Deletes and frees the given node and all its successors using del and free(), then sets the list pointer to NULL. Returns nothing.
+	Deletes and frees the given node and all its successors using del and free, then sets the list pointer to NULL. Returns nothing.
 
 	-	ft_lstiter
 	void ft_lstiter(t_list *lst, void (*f)(void *));
@@ -256,4 +256,4 @@ Part 3 - Linked list
 	-	ft_lstmap
 	t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-	Iterates through the list, applies f() to each node's content, and builds a new list from the results. del() is used to free the content of a node if needed (e.g. when an allocation fails midway). Returns the new list, or NULL if an allocation fails.
+	Iterates through the list, applies f to each node's content, and builds a new list from the results. del is used to free the content of a node if needed (e.g. when an allocation fails midway). Returns the new list, or NULL if an allocation fails.
