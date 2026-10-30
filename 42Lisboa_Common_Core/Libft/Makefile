@@ -1,11 +1,11 @@
-NAME := libft.a
+NAME = libft.a
 
-CC := cc
-CFLAGS := -Wall -Wextra -Werror
-CPPFLAGS := -I.
-RM := rm -f
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+CPPFLAGS = -I.
+RM = rm -f
 
-SRC := ft_tolower.c ft_toupper.c ft_isprint.c ft_isascii.c ft_isalnum.c \
+SRC = ft_tolower.c ft_toupper.c ft_isprint.c ft_isascii.c ft_isalnum.c \
 		ft_isdigit.c ft_isalpha.c ft_atoi.c ft_strlen.c ft_strlcat.c \
 		ft_strncmp.c ft_strdup.c ft_calloc.c ft_memcpy.c ft_strchr.c \
 		ft_strrchr.c ft_strnstr.c ft_bzero.c ft_memchr.c ft_memcmp.c \
@@ -15,8 +15,8 @@ SRC := ft_tolower.c ft_toupper.c ft_isprint.c ft_isascii.c ft_isalnum.c \
 		ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
 		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
-OBJ := $(SRC:.c=.o)
-HEADER := libft.h
+OBJ = $(SRC:.c=.o)
+HEADER = libft.h
 
 .PHONY: all clean fclean re
 

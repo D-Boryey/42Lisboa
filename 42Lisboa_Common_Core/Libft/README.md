@@ -1,4 +1,4 @@
-_This project has been created as part of the 42 curriculum by dboryey._
+*This project has been created as part of the 42 curriculum by dboryey.*
  
 Description: 
 	-	The project required us to create a custom library, libft, that will be used in the next C projects. It's a compilation of many libc functions (with a prefix "ft_"), as well as some aditional functions that could be useful throughout the next projects.
