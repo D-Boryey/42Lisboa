@@ -6,16 +6,16 @@
 /*   By: dboryey <dboryey@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 18:52:54 by dboryey           #+#    #+#             */
-/*   Updated: 2026/10/30 19:12:00 by dboryey          ###   ########.fr       */
+/*   Updated: 2026/10/30 19:19:23 by dboryey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(unsigned int nmemb, unsigned int size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	char	*dest;
-	unsigned int	total;
+	size_t	total;
 
 	total = nmemb * size;
 	dest = malloc(total);
