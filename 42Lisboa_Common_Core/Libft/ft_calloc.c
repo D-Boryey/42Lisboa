@@ -6,7 +6,7 @@
 /*   By: dboryey <dboryey@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 18:52:54 by dboryey           #+#    #+#             */
-/*   Updated: 2026/10/30 23:23:32 by dboryey          ###   ########.fr       */
+/*   Updated: 2026/11/02 14:49:36 by dboryey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	if (nmemb == 0 || size == 0)
 		return (malloc(1));
-	max = (size_t)-1;
+	max = __SIZE_MAX__;
 	if (size > max / nmemb)
 		return (NULL);
 	total = nmemb * size;
