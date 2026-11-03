@@ -18,8 +18,6 @@ SRC = ft_tolower.c ft_toupper.c ft_isprint.c ft_isascii.c ft_isalnum.c \
 OBJ = $(SRC:.c=.o)
 HEADER = libft.h
 
-.PHONY: all clean fclean re
-
 all: $(NAME)
 
 %.o: %.c $(HEADER)
@@ -35,3 +33,5 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
