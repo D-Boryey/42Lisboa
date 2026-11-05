@@ -6,7 +6,8 @@ Description:
 Instructions: 
 	-	The repository includes a Makefile that will compile the library. To run it, you need to run "make" command in the terminal, opened in the lib repository, where you have all the .c and .h files.
 
-	-	The Makefile also includes clean, fclean and re commands:
+	-	The Makefile also includes all, clean, fclean and re commands:
+		-	"make" is the initial command, equal to "make all" because it picks the first available command, which is all. This command will compile everything and create the libft.a file in the same directory.
 		-	"make clean" will remove all the .o files generated during the compilation.
 		-	"make fclean" will do the same as "make clean" but also remove the library created (.a file).
 		-	"make re" will compile a brand new library, after running fclean.
