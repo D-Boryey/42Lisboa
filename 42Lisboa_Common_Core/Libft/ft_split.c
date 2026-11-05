@@ -6,11 +6,12 @@
 /*   By: dboryey <dboryey@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/23 13:56:41 by dboryey           #+#    #+#             */
-/*   Updated: 2026/10/26 10:37:01 by dboryey          ###   ########.fr       */
+/*   Updated: 2026/11/05 14:30:15 by dboryey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static size_t	count_wrd(char const *s, char c)
 {
