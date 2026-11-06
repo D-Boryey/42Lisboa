@@ -6,27 +6,27 @@
 /*   By: dboryey <dboryey@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 15:35:29 by dboryey           #+#    #+#             */
-/*   Updated: 2026/11/03 15:41:54 by dboryey          ###   ########.fr       */
+/*   Updated: 2026/11/06 17:53:20 by dboryey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char c, int *count)
+void	ft_putchar(char c, int *counter)
 {
 	write (1, &c, 1);
-	(*count)++;
+	(*counter)++;
 	return ;
 }
 
-void	ft_putstr(char *c, int *count)
+void	ft_putstr(char *c, int *counter)
 {
 	int	i;
 
 	if (!c)
 	{
 		write (1, "(null)", 6);
-		(*count) += 6;
+		(*counter) += 6;
 		return ;
 	}
 	i = 0;
@@ -34,7 +34,7 @@ void	ft_putstr(char *c, int *count)
 	{
 		write (1, &c[i], 1);
 		i++;
-		(*count)++;
+		(*counter)++;
 	}
 	return ;
 }
