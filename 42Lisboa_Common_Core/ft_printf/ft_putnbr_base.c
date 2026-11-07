@@ -6,13 +6,13 @@
 /*   By: dboryey <dboryey@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 15:15:56 by dboryey           #+#    #+#             */
-/*   Updated: 2026/11/06 19:31:47 by dboryey          ###   ########.fr       */
+/*   Updated: 2026/11/07 10:44:27 by dboryey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_strlen(char *s)
+static int	ft_strlen(char *s)
 {
 	int	i;
 
@@ -58,7 +58,7 @@ void	ft_putnbr_base(int nbr, char *base, int *counter)
 
 void	ft_putnbr_base_unsigned(unsigned long n, char *base, int *counter)
 {
-	char	box[65];
+	char	box[64];
 	int		size;
 	int		i;
 

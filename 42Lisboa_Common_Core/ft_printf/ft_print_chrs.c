@@ -6,11 +6,12 @@
 /*   By: dboryey <dboryey@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 15:35:29 by dboryey           #+#    #+#             */
-/*   Updated: 2026/11/06 17:53:20 by dboryey          ###   ########.fr       */
+/*   Updated: 2026/11/07 13:26:50 by dboryey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <unistd.h>
 
 void	ft_putchar(char c, int *counter)
 {
