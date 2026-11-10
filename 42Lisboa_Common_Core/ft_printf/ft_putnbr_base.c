@@ -6,7 +6,7 @@
 /*   By: dboryey <dboryey@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 15:15:56 by dboryey           #+#    #+#             */
-/*   Updated: 2026/11/07 10:44:27 by dboryey          ###   ########.fr       */
+/*   Updated: 2026/11/07 18:10:32 by dboryey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,20 @@ static int	ft_strlen(char *s)
 
 static void	ft_putnbr_digits(long n, char *base, int size, int *counter)
 {
-	char	box[32];
+	char	buf[32];
 	int		i;
 
 	i = 0;
 	while (n > 0)
 	{
-		box[i] = base[n % size];
+		buf[i] = base[n % size];
 		n = n / size;
 		i++;
 	}
-	while (--i >= 0)
+	while (i >= 0)
 	{
-		ft_putchar(box[i], counter);
+		ft_putchar(buf[i], counter);
+		i--;
 	}
 }
 
@@ -58,7 +59,7 @@ void	ft_putnbr_base(int nbr, char *base, int *counter)
 
 void	ft_putnbr_base_unsigned(unsigned long n, char *base, int *counter)
 {
-	char	box[64];
+	char	buf[64];
 	int		size;
 	int		i;
 
@@ -71,10 +72,13 @@ void	ft_putnbr_base_unsigned(unsigned long n, char *base, int *counter)
 	i = 0;
 	while (n > 0)
 	{
-		box[i] = base[n % size];
+		buf[i] = base[n % size];
 		n = n / size;
 		i++;
 	}
-	while (--i >= 0)
-		ft_putchar(box[i], counter);
+	while (i >= 0)
+	{
+		ft_putchar(buf[i], counter);
+		i--;
+	}		
 }
