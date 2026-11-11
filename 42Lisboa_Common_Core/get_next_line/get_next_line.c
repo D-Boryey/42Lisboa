@@ -1,23 +1,43 @@
-#include "get_next_line.h"
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dboryey <dboryey@student.42lisboa.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/11 11:55:29 by dboryey           #+#    #+#             */
+/*   Updated: 2026/11/11 17:11:29 by dboryey          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char *get_next_line(int fd)
+#include "get_next_line.h"
+
+char	*get_next_line(int fd)
 {
 	static char	*box;
-	char		*line;
 	char		*buf;
-	ssize_t 	r_bytes;
-	size_t		box_len;
+	char		*line;
+	ssize_t		r_bytes;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	buf = malloc(BUFFER_SIZE + 1);
 	if (!buf)
 		return (NULL);
-	while(!ft_has_eol(box, '\n'))
+	r_bytes = 1;
+	while (!ft_has_eol(box, '\n') && r_bytes > 0)
 	{
-		r_bytes = read(fd, box, BUFFER_SIZE);
-		
-		box_len += 4;
+		r_bytes = ft_read_box(fd, buf, &box);
+		if (r_bytes < 0)
+			return (free(buf), free(box), box = NULL, NULL);
 	}
+	free(buf);
+	if (!box || !box[0])
+		return (free(box), box = NULL, NULL);
+	line = ft_get_line(box);
+	if (!line)
+		return (free(box), box = NULL, NULL);
+	box = ft_update_box(box);
+	return (line);
 }
+

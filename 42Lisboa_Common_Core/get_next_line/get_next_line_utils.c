@@ -1,42 +1,53 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dboryey <dboryey@student.42lisboa.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/11 11:55:27 by dboryey           #+#    #+#             */
+/*   Updated: 2026/11/11 17:11:38 by dboryey          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
-char	*ft_has_eol(char *box, char c)
+int	ft_has_eol(const char *box, char c)
 {
 	int	i;
 
 	i = 0;
+	if (!box)
+		return (0);
 	while (box[i])
 	{
 		if (box[i] == c)
-			return ((char *)&box[i]);
+			return (1);
 		i++;
 	}
-	return (NULL);
+	return (0);
 }
 
-char	*ft_merge(char *box, char const *buf, size_t len)
+char	*ft_merge(char *box, const char *buf, ssize_t len)
 {
-	size_t	i;
-	size_t	j;
 	char	*new_box;
-
-	if (!box || !buf)
-		return (NULL);
-	box = malloc((len + 1) * sizeof(char));
-	if (!new_box)
-		return (NULL);
-	i = 0;
-	j = 0;
-	while (box[i])
-	{
-		new_box[i] = box[i];
-		i++;
-	}
-	while (buf[j])
-	{
-		new_box[i + j] = buf[j];
-		j++;
-	}
-	new_box[i + j] = '\0';
 	return (new_box);
 }
+
+char	*ft_get_line(const char *box)
+{
+	char	*line;
+	return (line);
+}
+
+char	*ft_update_box(char *box)
+{
+	return (box);
+}
+
+ssize_t	ft_read_box(int fd, char *buf, char **box)
+{
+	ssize_t	n;
+	return (n);
+}
+
