@@ -6,7 +6,7 @@
 /*   By: dboryey <dboryey@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 11:55:29 by dboryey           #+#    #+#             */
-/*   Updated: 2026/11/11 17:11:29 by dboryey          ###   ########.fr       */
+/*   Updated: 2026/11/12 15:32:31 by dboryey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,3 @@ char	*get_next_line(int fd)
 	box = ft_update_box(box);
 	return (line);
 }
-

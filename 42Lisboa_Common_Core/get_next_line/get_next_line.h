@@ -6,7 +6,7 @@
 /*   By: dboryey <dboryey@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 11:55:29 by dboryey           #+#    #+#             */
-/*   Updated: 2026/11/11 17:11:55 by dboryey          ###   ########.fr       */
+/*   Updated: 2026/11/12 15:32:34 by dboryey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,3 @@ char	*ft_update_box(char *box);
 ssize_t	ft_read_box(int fd, char *buf, char **box);
 
 #endif
-
