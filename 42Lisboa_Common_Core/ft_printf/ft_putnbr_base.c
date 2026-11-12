@@ -6,7 +6,7 @@
 /*   By: dboryey <dboryey@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 15:15:56 by dboryey           #+#    #+#             */
-/*   Updated: 2026/11/12 18:45:08 by dboryey          ###   ########.fr       */
+/*   Updated: 2026/11/12 18:46:07 by dboryey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,5 @@ void	ft_putnbr_base_unsigned(unsigned long n, char *base, int *counter)
 	{
 		ft_putchar(buf[i], counter);
 		i--;
-	}	
+	}
 }
