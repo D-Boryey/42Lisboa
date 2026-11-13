@@ -94,17 +94,6 @@ fixed-size local character array and then writes them in reverse order. A
 signed value is handled by writing `-` first and converting its magnitude;
 unsigned values use the same method without a sign.
 
-This design was chosen because it is small, predictable, and appropriate for
-the project constraints:
-
-- The format string is scanned in `O(n)` time, where `n` is its length.
-- A number conversion uses `O(d)` time and `O(d)` temporary storage, where
-	`d` is the number of digits in the selected base.
-- Output is streamed directly with `write`, so the formatted result is not
-	duplicated in a large dynamically allocated buffer.
-- A dispatcher and shared output counter keep conversion-specific logic
-	separate while preserving the `printf` return-value contract.
-
 ## Project Structure
 
 - `ft_printf.c` - format-string scan, variadic argument setup, and return count.
