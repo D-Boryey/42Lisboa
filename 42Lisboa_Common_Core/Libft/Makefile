@@ -32,4 +32,7 @@ fclean: clean
 
 re: fclean all
 
+# so:
+# 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) -shared -o libft.so
+
 .PHONY: all clean fclean re
