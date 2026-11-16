@@ -6,7 +6,7 @@
 /*   By: dboryey <dboryey@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 15:15:56 by dboryey           #+#    #+#             */
-/*   Updated: 2026/11/13 14:25:54 by dboryey          ###   ########.fr       */
+/*   Updated: 2026/11/16 11:31:27 by dboryey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ static void	ft_putnbr_digits(long n, char *base, int size, int *counter)
 		n = n / size;
 		i++;
 	}
-	while (i >= 0)
+	while (i > 0)
 	{
-		ft_putchar(buf[i], counter);
 		i--;
+		ft_putchar(buf[i], counter);
 	}
 }
 
@@ -76,9 +76,9 @@ void	ft_putnbr_base_unsigned(unsigned long n, char *base, int *counter)
 		n = n / size;
 		i++;
 	}
-	while (i >= 0)
+	while (i > 0)
 	{
-		ft_putchar(buf[i], counter);
 		i--;
+		ft_putchar(buf[i], counter);
 	}
 }
