@@ -4,23 +4,21 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
-SRC = get_next_line.c get_next_line_utils.c
+SRC = get_next_line.c get_next_line_utils.c .main.c
 
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-%.o: %.c get_next_line.h
-	$(CC) $(CFLAGS) -c $< -o $@
+$(NAME): $(SRC) get_next_line.h
+	$(CC) $(CFLAGS) $(SRC) -o $(NAME) && \
+	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME) .text.txt 
 
-$(NAME): $(OBJ)
-	ar rcs $@ $^
+c:
+	$(RM) $(OBJ) && clear
 
-clean:
-	$(RM) $(OBJ)
-
-fclean: clean
-	$(RM) $(NAME)
+f: c
+	$(RM) $(NAME) && clear
 
 re: fclean all
 
