@@ -2,7 +2,4 @@ Hello
 My
 Awesome
 World
-!
-
-
-hehehe
+!  
