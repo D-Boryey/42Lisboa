@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dboryey <dboryey@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/11 11:55:29 by dboryey           #+#    #+#             */
-/*   Updated: 2026/11/12 15:32:34 by dboryey          ###   ########.fr       */
+/*   Created: 2026/11/18 15:56:04 by dboryey           #+#    #+#             */
+/*   Updated: 2026/11/18 15:56:05 by dboryey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+size_t	ft_strlen(const char *s);
+size_t	ft_linelen(const char *s);
+int		ft_has_eol(const char *s);
+char	*ft_strjoin(char *line, char *box, size_t len);
+void	ft_shift(char *box, size_t start);
 char	*get_next_line(int fd);
-int		ft_has_eol(const char *box, char c);
-char	*ft_merge(char *box, const char *buf, ssize_t len);
-char	*ft_get_line(const char *box);
-char	*ft_update_box(char *box);
-ssize_t	ft_read_box(int fd, char *buf, char **box);
 
 #endif

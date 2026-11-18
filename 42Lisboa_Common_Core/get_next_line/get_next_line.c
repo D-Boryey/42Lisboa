@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dboryey <dboryey@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/11 11:55:29 by dboryey           #+#    #+#             */
-/*   Updated: 2026/11/13 11:46:36 by dboryey          ###   ########.fr       */
+/*   Created: 2026/11/18 15:56:02 by dboryey           #+#    #+#             */
+/*   Updated: 2026/11/18 16:12:14 by dboryey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,29 @@
 
 char	*get_next_line(int fd)
 {
-	static char	*box;
-	char		*buf;
+	static char	box[BUFFER_SIZE + 1];
 	char		*line;
 	ssize_t		r_bytes;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buf = malloc(BUFFER_SIZE + 1);
-	if (!buf)
-		return (NULL);
+	line = NULL;
 	r_bytes = 1;
-	while (!ft_has_eol(box, '\n') && r_bytes > 0)
+	while (r_bytes > 0)
 	{
-		r_bytes = ft_read_box(fd, buf, &box);
+		if (box[0])
+		{
+			line = ft_strjoin(line, box, ft_linelen(box));
+			if (!line)
+				return (NULL);
+			ft_shift(box, ft_linelen(box));
+		}
+		if (ft_has_eol(line))
+			return (line);
+		r_bytes = read(fd, box, BUFFER_SIZE);
 		if (r_bytes < 0)
-			return (free(buf), free(box), box = NULL, NULL);
+			return (box[0] = '\0', free(line), NULL);
+		box[r_bytes] = '\0';
 	}
-	free(buf);
-	if (!box || !box[0])
-		return (free(box), box = NULL, NULL);
-	line = ft_get_line(box);
-	if (!line)
-		return (free(box), box = NULL, NULL);
-	box = ft_update_box(box);
 	return (line);
 }
