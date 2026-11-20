@@ -6,7 +6,7 @@
 /*   By: dboryey <dboryey@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 15:56:02 by dboryey           #+#    #+#             */
-/*   Updated: 2026/11/18 17:25:36 by dboryey          ###   ########.fr       */
+/*   Updated: 2026/11/20 13:54:21 by dboryey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ char	*get_next_line(int fd)
 	{
 		if (box[0])
 		{
-			line = ft_strjoin(line, box, ft_linelen(box));
+			line = ft_strjoin(line, box, ft_len(box, '\n'));
 			if (!line)
 				return (NULL);
-			ft_shift(box, ft_linelen(box));
+			ft_shift(box, ft_len(box, '\n'));
 		}
 		if (ft_has_eol(line))
 			return (line);
@@ -40,3 +40,31 @@ char	*get_next_line(int fd)
 	}
 	return (line);
 }
+
+// #include <stdio.h>
+// #include <fcntl.h>
+
+// int main(int ac, char *av[])
+// {
+// 	(void)ac;
+// 	int fd = open(av[1], O_RDONLY);
+// 	char *line = get_next_line(fd);
+// 	printf("%s", line);
+// 	free(line);
+//	close (fd);
+// 	return (0);
+// }
+
+// int main(int ac, char *av[])
+// {
+// 	(void)ac;
+// 	int fd = open(av[1], O_RDONLY);
+// 	char *line = get_next_line(fd);
+// 	while (line = get_next_line(fd))
+// 	{
+// 		printf("%s", line);
+// 		free(line);
+// 	}
+// 	close (fd);
+// 	return (0);
+// }

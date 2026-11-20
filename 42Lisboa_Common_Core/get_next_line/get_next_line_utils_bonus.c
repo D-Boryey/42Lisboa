@@ -6,32 +6,22 @@
 /*   By: dboryey <dboryey@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 15:56:01 by dboryey           #+#    #+#             */
-/*   Updated: 2026/11/18 18:38:13 by dboryey          ###   ########.fr       */
+/*   Updated: 2026/11/20 13:39:55 by dboryey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
-size_t	ft_strlen(char *s)
+size_t	ft_len(char *s, char c)
 {
 	size_t	i;
 
 	if (!s)
 		return (0);
 	i = 0;
-	while (s[i])
+	while (s[i] && s[i] != c)
 		i++;
-	return (i);
-}
-
-size_t	ft_linelen(char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] && s[i] != '\n')
-		i++;
-	if (s[i] == '\n')
+	if (c && s[i] == c)
 		i++;
 	return (i);
 }
@@ -58,7 +48,7 @@ char	*ft_strjoin(char *line, char *box, size_t len)
 	size_t	i;
 	size_t	j;
 
-	new_line = malloc(ft_strlen(line) + len + 1);
+	new_line = malloc(ft_len(line, '\0') + len + 1);
 	if (!new_line)
 		return (free(line), NULL);
 	i = 0;

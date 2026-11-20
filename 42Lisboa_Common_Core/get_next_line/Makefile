@@ -14,21 +14,17 @@ OBJ_BONUS = $(SRC_BONUS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(SRC) get_next_line.h
-	$(CC) $(CFLAGS) $(SRC) -o $(NAME) && \
-	valgrind -s --leak-check=full --show-leak-kinds=all ./$(NAME) \
-	.text.txt 
+	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 bonus: $(SRC_BONUS) get_next_line_bonus.h
-	$(CC) $(CFLAGS) $(SRC_BONUS) -o get_next_line_bonus && \
-	valgrind -s --leak-check=full --show-leak-kinds=all ./$(NAME_BONUS) \
-	.text1.txt .text2.txt .text3.txt 
+	$(CC) $(CFLAGS) $(SRC_BONUS) -o $(NAME_BONUS)
 
-c:
+clean:
 	$(RM) $(OBJ) $(OBJ_BONUS) && clear
 
-f: c
+fclean: clean
 	$(RM) $(NAME) $(NAME_BONUS) && clear
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all bonus clean fclean re
